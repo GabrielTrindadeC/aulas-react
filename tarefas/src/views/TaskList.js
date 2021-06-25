@@ -12,10 +12,11 @@ import 'moment/locale/pt-br'
 import todayImage from '../../assets/imgs/today.jpg'
 import commonStyles from '../commonStyles'
 import Task from '../components/Task'
+import AddTask from './AddTask'
 
 const initialState = {
     showDoneTask : true,
-    showAddTask : false,
+    showAddTask : true,
     visibleTask :[],
     tasks : []
 }
@@ -31,6 +32,7 @@ export default class TaskList extends Component {
 
         return (
             <View style={styles.container}>
+                <AddTask isVisible={this.state.showAddTask}/>
                 <ImageBackground source= {todayImage} style={styles.background}>
                     <View style= {styles.iconBar}>
                         <TouchableOpacity>
@@ -48,11 +50,16 @@ export default class TaskList extends Component {
                 <View style= {styles.containerList}>
                     <Task
                     desc= "Ver filme" 
-                    estimatedAt= {new Date()}/>
-                    <Task 
-                    desc= "Ver filme"  
                     estimatedAt= {new Date()}
                     doneAt= {new Date()}/>
+                    <Task 
+                    desc= "Lavar louça"  
+                    estimatedAt= {new Date()}
+                    doneAt= {new Date()}/>
+                    <Task 
+                    desc= "Estudar"  
+                    estimatedAt= {new Date()}
+                    doneAt= {null}/>
                 </View>
                 <TouchableOpacity style={styles.addButton}>
                     <Icon name='plus' size={20} color= {commonStyles.colors.secondary}/>
@@ -105,5 +112,6 @@ const styles = StyleSheet.create({
         right: 30,
         bottom: 30,
         borderRadius: 40
-    }
+    },
+   
 })
