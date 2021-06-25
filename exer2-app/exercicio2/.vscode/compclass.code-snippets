@@ -1,0 +1,20 @@
+{
+	"print to console" : {
+		"scope" : "javascript,typescript",
+		"prefix": "compclass",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import { Text } from 'reactive-native'",
+			"",
+			"export default class <nome da classe> extends Component {",
+			"",
+			"    render(){",
+			"        return(",
+			"            <Text>{}</Text>",
+			"         )",
+			"     }",
+			"}"
+		],
+		"description": "Log output to console"
+	}
+}
